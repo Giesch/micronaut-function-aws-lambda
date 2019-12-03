@@ -3,6 +3,10 @@ https://github.com/awslabs/aws-sam-cli[AWS SAM CLI] is a CLI tool for local deve
 NOTE: You can skip this section. If you want to complete this section you will need SAM and Docker installed.
 
 To test your Micronuat function with SAM you will first need to https://github.com/awslabs/aws-sam-cli/blob/develop/docs/installation.rst[install SAM].
+You should also ensure that your version of micronaut-function-aws is at least 1.3.5:
+
+[source, groovy]
+implementation "io.micronaut:micronaut-function-aws:1.3.5"
 
 Then create a file `event.json`. We will use it as the stimulus for the SAM cli invocation.
 
@@ -20,6 +24,7 @@ Next create a https://github.com/awslabs/serverless-application-model[AWS SAM te
 include::{sourceDir}/vies-vat-validator/template.yaml[]
 ----
 
+Be sure to update the CodeUri field to your local build path if necessary.
 With that in place, you can invoke your function locally:
 
 [source, bash]
